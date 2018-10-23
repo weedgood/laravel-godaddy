@@ -93,6 +93,10 @@ class GoDaddy
         $domainPurchase->setContactTech($domainContactAdmin);
         $domainPurchase->setPeriod($purchaseYears);
         $domainPurchase->setRenewAuto($autoRenew);
+        if($domainTLD === 'us'){
+            $domainPurchase->setIntent("BUSINESS_FOR_PROFIT");
+            $domainPurchase->setEntityType("FOREIGN_BUSINESS");
+        }
 
         $this->getApi()->purchase($domainPurchase, $xShopperId);
     }
