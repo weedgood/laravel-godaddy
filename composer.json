@@ -21,7 +21,7 @@
   ],
   "repositories":[{
     "type": "git",
-    "url": "git@github.com:simon80119/godaddy-api-client.git"
+    "url": "https://github.com/simon80119/laravel-godaddy.git"
   }],
   "require": {
     "php": ">=7.0",
