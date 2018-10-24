@@ -96,6 +96,7 @@ class GoDaddy
         if($domainTLD === 'us'){
             $domainPurchase->setIntent("BUSINESS_FOR_PROFIT");
             $domainPurchase->setEntityType("FOREIGN_BUSINESS");
+            $domainPurchase->setCitizenship("TW");
         }
 
         $this->getApi()->purchase($domainPurchase, $xShopperId);
