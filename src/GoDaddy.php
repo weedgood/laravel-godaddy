@@ -59,8 +59,10 @@ class GoDaddy
         $domainTLD = $this->getTLDFromDomain($domain);
         $contact = config('laravel-godaddy.company-details');
 
-        $agreement = GoDaddy::getAgreement($domainTLD, false);
-        $agreementKeys = [$agreement[0]->getAgreementKey()];
+        $agreementKeys = [];
+        $agreements = GoDaddy::getAgreement($domainTLD, false);
+        foreach ($agreements as $agreement)
+            $agreementKeys[] = $agreement->getAgreementKey();
 
         $domainPurchase = new \GoDaddyDomainsClient\Model\DomainPurchase();
         $domainPurchase->setDomain($domain);
