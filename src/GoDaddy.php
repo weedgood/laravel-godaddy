@@ -101,7 +101,7 @@ class GoDaddy
             $domainPurchase->setCitizenship("TW");
         }
 
-        $this->getApi()->purchase($domainPurchase, $xShopperId);
+        return $this->getApi()->purchase($domainPurchase, $xShopperId);
     }
 
     /**
